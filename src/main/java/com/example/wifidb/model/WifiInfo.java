@@ -19,10 +19,10 @@ public class WifiInfo {
     private String instl_mby;
     private String svc_se;
     private String wifi_cmcwr;
-    private Integer instl_year;
+    private String instl_year;
     private String inout_door;
     private String wifi_remars;
-    private Float x;
-    private Float y;
+    private float x;
+    private float y;
     private String work_date;
 }

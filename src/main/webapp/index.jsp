@@ -1,3 +1,7 @@
+<%@ page import="com.example.wifidb.DB.DataService" %>
+<%@ page import="com.example.wifidb.model.LocHty" %>
+<%@ page import="com.example.wifidb.model.WifiInfo" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -13,13 +17,13 @@
         .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
     </style>
 
+
 </head>
 <body>
 <h1>와이파이 정보 구하기</h1>
-<a href="hello-servlet">Hello Servlet</a>
-<a href="index.jsp">홈</a> | <a href="location_history.jsp">위치 히스토리 목록</a>  | <a href="loc-servlet">Open API 와이파이 정보 가져오기</a>  <br>
+<a href="index.jsp">홈</a> | <a href="HistoryServlet">위치 히스토리 목록</a>  | <a href="GetInfoServlet">Open API 와이파이 정보 가져오기</a>  <br>
 
-<form action="loc-servlet" method="post">
+<form action="HomeServlet">
     LAT</label><input type="text" id="LAT" name="LAT" value="0.0"> ,
     LNT</label><input type="text" id="LNT" name="LNT" value="0.0">
     <button type="button" id="my_location">내 위치 가져오기</button>
@@ -32,11 +36,12 @@
             let latitude = pos.coords.latitude; //위도 y값
             let longitude = pos.coords.longitude; // 경도 x값
             document.getElementById('LAT').setAttribute('value',latitude);
-            document.getElementById('LNT').setAttribute('value',longitude)
+            document.getElementById('LNT').setAttribute('value',longitude);
         });
     }
 </script>
-<table class="tg">
+
+<table class="tg" id="table">
     <thead>
     <tr>
         <th class="tg-dqvt">거리(Km)</th>
@@ -59,7 +64,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
+    <tr id="basic_col">
         <td class="tg-c3ow" colspan="17">위치 정보를 입력한 후에 조회해 주세요.</td>
     </tr>
     </tbody>
