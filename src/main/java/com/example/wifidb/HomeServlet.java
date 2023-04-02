@@ -44,7 +44,9 @@ public class HomeServlet extends HttpServlet {
                 "\n" +
                 "</head><body>");
         out.println("<h1>와이파이 정보 구하기</h1>\n" +
-                "<a href=\"index.jsp\">홈</a> | <a href=\"HistoryServlet\">위치 히스토리 목록</a>  | <a href=\"GetInfoServlet\">Open API 와이파이 정보 가져오기</a>  <br>\n" +
+                "<a href=\"index.jsp\">홈</a> | <a href=\"HistoryServlet\">위치 히스토리 목록</a>  |\n" +
+                "<a href=\"GetInfoServlet\">Open API 와이파이 정보 가져오기</a> |\n" +
+                "<a href=\"bookmark.jsp\">북마크 보기</a> | <a href=\"bmg.jsp\">북마크 그룹 관리</a>" +
                 "\n" +
                 "<form action=\"HomeServlet\">\n" +
                 "    LAT</label><input type=\"text\" id=\"LAT\" name=\"LAT\" value=\""+ x + "\"> ,\n" +
@@ -80,7 +82,14 @@ public class HomeServlet extends HttpServlet {
             out.println("<td>" + wifiInfo.getDistance() + "</td>");
             out.println("<td>" + wifiInfo.getWifino() + "</td>");
             out.println("<td>" + wifiInfo.getGu() + "</td>");
-            out.println("<td>" + wifiInfo.getWifinm() + "</td>");
+            out.println("<td>"+
+                    "<a href=\"wifi_detail.jsp?wifino="
+                    + wifiInfo.getWifino() + "&distance="
+                    + wifiInfo.getDistance()
+                    + "\">"
+                    + wifiInfo.getWifinm()
+                    + "</a>"
+                    + "</td>");
             out.println("<td>" + wifiInfo.getAdres1() + "</td>");
             out.println("<td>" + wifiInfo.getAdres2() + "</td>");
             out.println("<td>" + wifiInfo.getFloor() + "</td>");

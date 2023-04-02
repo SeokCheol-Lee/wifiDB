@@ -20,8 +20,10 @@
 
 </head>
 <body>
-<h1>와이파이 정보 구하기</h1>
-<a href="index.jsp">홈</a> | <a href="HistoryServlet">위치 히스토리 목록</a>  | <a href="GetInfoServlet">Open API 와이파이 정보 가져오기</a>  <br>
+<h1>와이파이 정보 구하기</h1><br>
+<a href="index.jsp">홈</a> | <a href="HistoryServlet">위치 히스토리 목록</a>  |
+<a href="GetInfoServlet">Open API 와이파이 정보 가져오기</a> |
+<a href="bookmark.jsp">북마크 보기</a> | <a href="bmg.jsp">북마크 그룹 관리</a>
 
 <form action="HomeServlet">
     LAT</label><input type="text" id="LAT" name="LAT" value="0.0"> ,

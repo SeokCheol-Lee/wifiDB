@@ -44,7 +44,9 @@ public class HistoryServlet extends HttpServlet {
                 "\n" +
                 "</head><body>");
         out.println("<h1>위치 히스토리 목록</h1>\n" +
-                "<a href=\"index.jsp\">홈</a> | <a href=\"HistoryServlet\">위치 히스토리 목록</a>  | <a href=\"GetInfoServlet\">Open API 와이파이 정보 가져오기</a>  <br>");
+                "<a href=\"index.jsp\">홈</a> | <a href=\"HistoryServlet\">위치 히스토리 목록</a>  |\n" +
+                "<a href=\"GetInfoServlet\">Open API 와이파이 정보 가져오기</a> |\n" +
+                "<a href=\"bookmark.jsp\">북마크 보기</a> | <a href=\"bmg.jsp\">북마크 그룹 관리</a>");
         out.println("<table class=\"tg\" id=\"table\">\n" +
                 "    <thead>\n" +
                 "    <tr>\n" +
