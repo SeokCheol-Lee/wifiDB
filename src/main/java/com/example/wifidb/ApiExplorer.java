@@ -39,7 +39,7 @@ public class ApiExplorer {
         int total = 5000;
         while (cnt < total){
             StringBuilder urlBuilder = new StringBuilder("http://openapi.seoul.go.kr:8088"); /*URL*/
-            urlBuilder.append("/" +  URLEncoder.encode("4b41725a5a6c736331344341587048","UTF-8") ); /*인증키 (sample사용시에는 호출시 제한됩니다.)*/
+            urlBuilder.append("/" +  URLEncoder.encode("인증키","UTF-8") ); /*인증키 (sample사용시에는 호출시 제한됩니다.)*/
             urlBuilder.append("/" +  URLEncoder.encode("json","UTF-8") ); /*요청파일타입 (xml,xmlf,xls,json) */
             urlBuilder.append("/" + URLEncoder.encode("TbPublicWifiInfo","UTF-8")); /*서비스명 (대소문자 구분 필수입니다.)*/
             urlBuilder.append("/" + URLEncoder.encode(String.valueOf(cnt),"UTF-8")); /*요청시작위치 (sample인증키 사용시 5이내 숫자)*/
